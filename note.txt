@@ -22,4 +22,11 @@ php artisan make:controller Api\V1\CategoryController --model Category --request
 Посылаем наш первый запрос к API
 public function index(){return response()->json(['message' => 'Categories list']);}
 
-5 урок
+5 урок API для Category
+Создаем в постмане еще одну коллекцию  
+В реквестах делаем тру на авторайз и прописываем правила валидации
+В контроллере прописываем методы
+В модели категорий добавляем разрешение на изменение
+В папку бутстрапа а апп добавляем код выброса ошибок
+
+6 урок
