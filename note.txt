@@ -13,7 +13,7 @@ php artisan install:api    в маршрутах создастся файл д�
 3 урок
 php artisan make:model Category -m
 Прописываем атрибуты миграции и выполняем ее
-php artisan make:controller Api\V1\CategoryController --model Category --requests --api
+php artisan make:controller Api\V1\CategoryController --model=Category --requests --api
 Прописываем сложную группу маршрутов с одним роутом
 
 4 урок Работа с Postman. Первый JSON
@@ -29,4 +29,12 @@ public function index(){return response()->json(['message' => 'Categories list']
 В модели категорий добавляем разрешение на изменение
 В папку бутстрапа а апп добавляем код выброса ошибок
 
-6 урок
+6 урок API для Post
+Прописываем маршрут
+php artisan make:model Post -m
+Заполняем миграцию и выполняем ее
+php artisan make:controller Api\V1\PostController --model=Post --requests --api
+Прописываем рулы
+В модели прописываем protected $fillable = ['title', 'content', 'category_id'];
+В контроллере прописываем методы
+Остановился на 12:40
