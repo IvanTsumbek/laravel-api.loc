@@ -16,3 +16,10 @@ php artisan make:model Category -m
 php artisan make:controller Api\V1\CategoryController --model Category --requests --api
 Прописываем сложную группу маршрутов с одним роутом
 
+4 урок Работа с Postman. Первый JSON
+Создаем в постмане коллекцию и прописываем переменную
+Прописываем заголовки: Accept   application/json    и     Content-Type     application/json
+Посылаем наш первый запрос к API
+public function index(){return response()->json(['message' => 'Categories list']);}
+
+5 урок
