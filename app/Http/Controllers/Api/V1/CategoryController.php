@@ -50,7 +50,7 @@ class CategoryController extends Controller
     {
         $category->delete();
         return response()->json([
-            'massage' => 'Category removed'
+            'message' => 'Category removed'
         ]);
     }
 }

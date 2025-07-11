@@ -37,4 +37,4 @@ php artisan make:controller Api\V1\PostController --model=Post --requests --api
 Прописываем рулы
 В модели прописываем protected $fillable = ['title', 'content', 'category_id'];
 В контроллере прописываем методы
-Остановился на 12:40
+В методе шоу привели пример как скрыть от пользователя определнный пост. Например с id3

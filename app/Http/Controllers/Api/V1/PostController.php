@@ -30,7 +30,10 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        if($post->id == 3){
+            return response()->json(['message' => 'Forbidden'], 403);
+        }
+        return $post;
     }
 
     /**
@@ -38,7 +41,8 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $post->update($request->all());
+        return $post;
     }
 
     /**
@@ -46,6 +50,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return response()->json([
+            'message' => 'Post removed'
+        ]);
     }
 }
