@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use App\Http\Resources\V1\CategoryResource;
 
 class CategoryController extends Controller
 {
@@ -15,7 +16,8 @@ class CategoryController extends Controller
     public function index()
     {
         // return response()->json(['message' => 'Categories list']);
-        return Category::all();
+        // return Category::all();
+        return CategoryResource::collection(Category::all());          //урок 7
     }
 
     /**
@@ -23,7 +25,7 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        return Category::create($request->all());
+        return new CategoryResource(Category::create($request->all()));
     }
 
     /**
@@ -31,7 +33,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return $category;
+        return new CategoryResource($category);
     }
 
     /**
@@ -40,7 +42,7 @@ class CategoryController extends Controller
     public function update(UpdateCategoryRequest $request, Category $category)
     {
         $category->update($request->all());
-        return $category;
+        return new CategoryResource($category);
     }
 
     /**

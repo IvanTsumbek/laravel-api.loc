@@ -38,3 +38,13 @@ php artisan make:controller Api\V1\PostController --model=Post --requests --api
 В модели прописываем protected $fillable = ['title', 'content', 'category_id'];
 В контроллере прописываем методы
 В методе шоу привели пример как скрыть от пользователя определнный пост. Например с id3
+
+7 урок Ресурсы и формат ответа
+php artisan make:resource V1\CategoryResource
+С помощью ресурса прописываем только те атрибуты, которые хотим выводить, причем название ключей ставим какое хотим.
+CategoryResource::collection(Category::all());  превращаем массив в объект. Также меняем и в остальных методах
+php artisan make:resource V1\PostResource  проделываем те же операции, что и с категориями. В ресурсах показываем условия
+Создаем связь поста с категорией
+В показе постов применяем жадную загрузку
+
+
