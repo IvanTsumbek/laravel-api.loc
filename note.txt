@@ -53,4 +53,10 @@ php artisan make:resource V1\PostResource  проделываем те же оп
 Добавляем трейт HasApiTokens в модель юзера
 Добавляем мидлвеар 'auth:sanctum' в маршрут
 
-9 урок 
+9 урок Регистрация, авторизация и токен
+php artisan make:controller Api\V1\AuthController
+php artisan make:request StoreUserRequest
+php artisan make:request LoginUserRequest
+Прописываем методы контроллера и вызываем их в новых маршрутах, которые мы создаем
+Добавляем методы в постмане
+Прописываем рулы в реквестах
